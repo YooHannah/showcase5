@@ -1,16 +1,18 @@
+const path = require('path')
+
 module.exports = {
-  entry: __dirname + '/src',
+  entry: path.join(__dirname, './src'),
   module: {
     rules: [
       {
         test: /\.js$/,
-        include: __dirname + '/src',
+        include: path.join(__dirname, './src'),
         use: 'babel-loader'
       }
     ]
   },
   output: {
-    path: __dirname + '/dist',
+    path: path.join(__dirname, './dist'),
     filename: 'bundle.js'
   }
 }

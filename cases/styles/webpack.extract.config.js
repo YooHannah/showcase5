@@ -1,13 +1,13 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-
+const path = require('path')
 module.exports = {
-  context: __dirname + '/src',
+  context: path.join(__dirname, './src'),
   entry: './',
   module: {
     rules: [{
       test: /\.css$/,
       include: [
-        __dirname + '/src'
+       path.join(__dirname, './src'),
       ],
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
@@ -16,7 +16,7 @@ module.exports = {
     }]
   },
   output: {
-      path: __dirname + '/dist',
+      path: path.join(__dirname, './dist'),
       filename: '[name].bundle.[hash].js'
   },
   plugins: [

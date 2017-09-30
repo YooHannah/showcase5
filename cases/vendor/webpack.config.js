@@ -2,7 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  context: __dirname + "/src",
+  context: path.join(__dirname, './src'),
   entry: {
     app: './',
     vendor: ['jquery', 'underscore'],
